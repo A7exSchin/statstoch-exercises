@@ -11,10 +11,10 @@ for i in range(0, bedCount):
     t = (i, bed)
     tuples.append(t)
     beds.remove(bed)
-    
+
 for t in tuples:
     print(t)
     if t[0] == t[1]:
         rightChoices += 1
-        
+
 print(str(rightChoices) + " of the sailors have chosen the right bed")
