@@ -10,6 +10,15 @@ n = str(input())
 print("Please enter the amount of tries:")
 tries = str(input())
 
+print("Please enter the x-Label:")
+xLabel = str(input())
+
+print("Please enter the y-Label:")
+yLabel = str(input())
+
+print("Please enter the title:")
+title = str(input())
+
 data = pd.read_csv("ressources/" + file,sep='\t', lineterminator='\n',header=None)
 data = pd.DataFrame(data)
 
@@ -19,9 +28,9 @@ y = data[1]
 
 plt.figure()
 
-plt.xlabel('Bought chocolate bars')
-plt.ylabel('Amount of occurrences')
-plt.title('Chocolate bar histogram, n='+ n +', '+ tries + ' tries')
+plt.xlabel(xLabel)
+plt.ylabel(yLabel)
+plt.title(title+ ', n='+ n +', '+ tries + ' tries')
 
 plt.bar(x, y)
 plt.savefig('ressources/' + file + '.png')

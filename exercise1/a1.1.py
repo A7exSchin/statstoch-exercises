@@ -7,10 +7,10 @@ bedCount = int(input())
 beds = []
 tuples = []
 
-for i in range(1, bedCount):
+for i in range(0, bedCount):
     beds.append(i)
 
-for i in range(1, bedCount):
+for i in range(0, bedCount):
     bed = choice(beds)
     t = (i, bed)
     tuples.append(t)
