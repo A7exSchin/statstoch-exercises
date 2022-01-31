@@ -18,17 +18,21 @@ a=0.1
 
 P = 0
 k=0
-while (P <= a):
-   P += scsp.binom(n, k) * p**k * q**(n-k)
-   print('Run: ' + str(k) + ' with probability: ' + str(P))
-   k += 1
+while P <= a:
+    P += scsp.binom(n, k) * p**k * q**(n-k)
+    print('Run: ' + str(k) + ' with probability: ' + str(P))
+    k += 1
    
    
 print('10th perc. calc: ' + str(k-2))
 
-# Plot Verteilungsfunktion F^Sn
 
 def verteilungs_funktion(x_param, y_param):
+    """
+    Plot Verteilungsfunktion F^Sn
+    :param x_param:
+    :param y_param:
+    """
     x_values = range(0, len(x_param))
     y_values = []
     for y in y_param:
@@ -54,14 +58,15 @@ def verteilungs_funktion(x_param, y_param):
     plt.grid()
     plt.show()
 
-P=0
+
+P = 0
 y = []
-k=0
-while (k <= 19):
-   P = scsp.binom(n, k) * p**k * q**(n-k)
-   y.append(P)
-   print('Run: ' + str(k) + ' with probability: ' + str(P))
-   k += 1
+k = 0
+while k <= 19:
+    P = scsp.binom(n, k) * p**k * q**(n-k)
+    y.append(P)
+    print('Run: ' + str(k) + ' with probability: ' + str(P))
+    k += 1
 
 x = range(k)
 verteilungs_funktion(x, y)
